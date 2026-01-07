@@ -124,6 +124,10 @@ comicmaker/
 - 当前实现中，内容生成部分返回示例数据，需要集成实际的 AI 服务
 - 数据存储在 `data/` 目录中，请确保有写入权限
 
+- server/config/config.yaml里的一些ai的key需要填上，比如生图生视频我用的wavespeed的封装api，之前研究一个agent项目时看别人用的，wavespeed_api字段要填上key。
+- LLM的我用的openrouter的封装api，访问gpt方便一些，填在openai_api_key字段上。
+- 以及阿里云oss的key和bucket，需要开公共读，用来做图床，给一些图和视频模型用来访问图的，内在代码逻辑是先上传到oss，然后把链接给到生图生视频接口。
+
 ## 开发计划
 
 - [ ] 集成 LLM API 用于分镜生成
